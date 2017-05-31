@@ -114,7 +114,7 @@ class WCLShineAngleLayer: CALayer, CAAnimationDelegate {
             let path = UIBezierPath(arcCenter: center, radius: bigWidth, startAngle: 0, endAngle: CGFloat(M_PI)*2, clockwise: false)
             bigShine.path = path.cgPath
             if params.allowRandomColor {
-                bigShine.fillColor = params.colorRandom[Int(arc4random())%params.colorRandom.count].cgColor
+                bigShine.fillColor = params.colorRandom[Int(arc4random_uniform(UInt32(params.colorRandom.count)))].cgColor
             }else {
                 bigShine.fillColor = params.bigShineColor.cgColor
             }
@@ -127,7 +127,7 @@ class WCLShineAngleLayer: CALayer, CAAnimationDelegate {
             let smallPath = UIBezierPath(arcCenter: smallCenter, radius: smallWidth, startAngle: 0, endAngle: CGFloat(M_PI)*2, clockwise: false)
             smallShine.path = smallPath.cgPath
             if params.allowRandomColor {
-                smallShine.fillColor = params.colorRandom[Int(arc4random())%params.colorRandom.count].cgColor
+                smallShine.fillColor = params.colorRandom[Int(arc4random_uniform(UInt32(params.colorRandom.count)))].cgColor
             }else {
                 smallShine.fillColor = params.smallShineColor.cgColor
             }
